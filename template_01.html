@@ -3,12 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta class="mktoString" id="page-title" mktoName="Page Title" default="This is page title">
-    <meta class="mktoString" id="icon-title" mktoName="Icon Block Title" default="Products & Services Heading" allowHtml="true">
-    <meta class="mktoString" id="form-title" mktoName="Form Title" default="Request a call back now">
     <meta class="mktoString" id="contact-us-url" mktoName="Contact Us URL" default="#form-anchor">
     <meta class="mktoString" id="contact-us-text" mktoName="Contact Us Button Text" default="Contact Us">
     <meta class="mktoString" id="client-title" mktoName="Client Block Title" default="Credibility or client logo bar heading">
-    <meta class="mktoString" id="footer-text" mktoName="Footer Text" default="Find out more about our review management enterprise solutions">
     <meta class="mktoString" id="footer-submit-url" mktoName="Footer Submit URL" default="#form-anchor">
     <meta class="mktoString" id="footer-submit-text" mktoName="Footer Button Text" default="Submit">
     <title>${page-title}</title>
@@ -38,7 +35,7 @@
         </div>
         <div class="products-services">
             <div class="icon-list margin-bottom">
-                <h2>${icon-title}</h2>
+                <div class="mktoText" id="icon-block-header" mktoName="Icon Block Header Text"><h2>Products & Services Heading</h2></div>
                 <div class="item">
                     <div class="icon">
                         <img class="mktoImg" id="icon-1" mktoName="Icon #1">
@@ -78,7 +75,7 @@
             </div>
             <div class="form-request margin-bottom" id="form-anchor">
                 <div class="card has-shadow">
-                    <h2>${form-title}</h2>
+                    <div class="text mktoText" id="form-request-header-text" mktoName="Form Request Header Text"><h2>Request a call back now</h2></div>
                     <div class="mktoForm" id="form-request" mktoName="Form Request"></div>
                 </div>
             </div>
@@ -121,13 +118,9 @@
                 </div>
             </div>
         </div>
-        <!--div class="text-block-center clients mktoText" id="client-header" mktoName="Clients Block Header">
-            <h2>Credibility or client logo bar heading</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus maxime dicta illo doloribus. In dicta atque minima dolores debitis voluptates quibusdam, odit. Modi eum quam excepturi doloremque amet. Praesentium, dignissimos.</p>
-        </div-->
     </div>
     <footer>
-        <h2>${footer-text}</h2>
+        <div class="mktoText" id="footer-text" mktoName="Footer Text"><h2>Find out more about our review management enterprise solutions</h2></div>
         <a href="${footer-submit-url}" class="btn main">${footer-submit-text}</a>
     </footer>
 </body>
