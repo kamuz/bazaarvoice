@@ -1,0 +1,543 @@
+/*--------------------------------------------------
+  VARIABLES
+--------------------------------------------------*/
+
+:root{
+    --main-pink: #C4358A;
+    --darker-pink: #B2307E;
+    --main-gray: #4A4A4A;
+    --main-font: "Gibson", sans-serif;
+}
+
+/*--------------------------------------------------
+  CUSTOM FONTS
+--------------------------------------------------*/
+
+@font-face{
+    font-family: 'Gibson';
+    src: url('http://resources.bazaarvoice.com/rs/848-PGD-174/images/Gibson.woff2') format('woff2'),
+        url('http://resources.bazaarvoice.com/rs/848-PGD-174/images/Gibson.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Gibson';
+    src: url('http://resources.bazaarvoice.com/rs/848-PGD-174/images/Gibson-Light.woff2') format('woff2'),
+        url('http://resources.bazaarvoice.com/rs/848-PGD-174/images/Gibson-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Gibson';
+    src: url('http://resources.bazaarvoice.com/rs/848-PGD-174/images/Gibson-SemiBold.woff2') format('woff2'),
+        url('http://resources.bazaarvoice.com/rs/848-PGD-174/images/Gibson-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+/*--------------------------------------------------
+  BASE
+--------------------------------------------------*/
+
+body, html{
+    margin: 0;
+    padding: 0;
+}
+
+*{
+    font-family: var(--main-font);
+    font-size: 17px;
+}
+
+h2{
+    font-size: 36px;
+}
+
+p, ol, ul, td, th{
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.container{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.img-responsive{
+    width: 100%;
+}
+
+.text-align-center{
+    text-align: center;
+}
+
+.margin-bottom{
+    margin-bottom: 30px;
+}
+
+.mktoGen.mktoImg{
+    display: flex;
+    justify-content: center;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li::before {
+    content: "\2022";
+    color: #00A690;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+/*--------------------------------------------------
+  BUTTONS
+--------------------------------------------------*/
+
+.btn,
+.mktoForm button.mktoButton{
+    display: inline-block;
+    padding: 7px 30px;
+    line-height: 30px;
+    border-radius: 100px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+}
+
+.btn.main,
+.mktoForm button.mktoButton{
+    background-color: var(--main-pink);
+}
+
+.btn.main:hover,
+.mktoForm button.mktoButton:hover{
+    background-color: var(--darker-pink);
+}
+
+.mktoForm button.mktoButton{
+    cursor: pointer;
+}
+
+/*--------------------------------------------------
+  HEADER
+--------------------------------------------------*/
+
+header,
+.products-services{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 30px 30px 0;
+    grid-column-gap: 50px;
+}
+
+header .btn.main{
+    margin-top: 5px;
+    float: right;
+}
+
+/*--------------------------------------------------
+  HERO TEXT
+--------------------------------------------------*/
+
+.hero-text h1{
+    text-align: center;
+    font-size: 72px;
+    margin: 50px auto 0;
+    width: 90%;
+}
+
+.hero-text p{
+    width: 90%;
+    margin: 30px auto;
+    color: var(--main-gray);
+    font-size: 24px;
+    text-align: center;
+    font-weight: 300;
+}
+
+/*--------------------------------------------------
+  HERO SLIDER
+--------------------------------------------------*/
+
+.hero-slider{
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 45% 50%;
+    grid-gap: 5%;
+}
+
+.hero-slider.second{
+    grid-template-columns: 70% 30%;
+    grid-gap: 5%;
+}
+
+.hero-slider.second img{
+    margin-top: 100px;
+}
+
+.hero-slider.ebook{
+    grid-template-columns: 45% 50%;
+    padding: 30px 30px 0;
+    margin-bottom: 100px;
+}
+
+.hero-slider.card-mobile{
+    grid-template-columns: 60% 35%;
+}
+
+.hero-slider.ebook img{
+    border-radius: 10px;
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.15);
+}
+
+.hero-slider .card-images{
+    position: relative;
+}
+
+.hero-slider .card-images > div{
+    width: 1062px;
+    height: 1019px;
+    position: absolute;
+    right: -270px;
+    top: -40px;
+    background: url(../img/card-images.png) no-repeat;
+}
+
+.hero-slider .card-images > img{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.hero-slider h1{
+    margin-top: 100px;
+    font-size: 72px;
+}
+
+.hero-slider .no-margin-smaller-size h1{
+    margin-top: 20px;
+    font-size: 62px;
+}
+
+.hero-slider.card-mobile h1{
+    margin-top: 100px;
+    font-size: 52px;
+}
+
+.hero-slider p{
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 30px;
+}
+
+#mkto_gen_hero-image-3{
+    display: flex;
+}
+
+#mkto_gen_hero-image-3 img{
+    width: auto;
+    max-height: 300px;
+}
+
+/*--------------------------------------------------
+  PRODUCTS AND SERVICES
+--------------------------------------------------*/
+
+.products-services.single-row{
+    grid-template-columns: 1fr;
+}
+
+.products-services.single-row .icon-list > div{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px 100px;
+}
+
+.icon-list .item{
+    display: grid;
+    grid-template-columns: 60px 1fr;
+}
+
+.icon-list h2{
+    font-size: 36px;
+}
+
+.icon-list .item h3{
+    font-size: 24px;
+    color: var(--main-gray);
+}
+
+.icon-list .item p{
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 24px;
+}
+
+.icon-list .item .icon img{
+    margin-top: 10px;
+}
+
+/*--------------------------------------------------
+  CARD
+--------------------------------------------------*/
+
+.card{
+    border-radius: 20px;
+    padding: 40px;
+}
+
+.single-row .card{
+    padding: 60px;
+    margin: 80px 15% 100px;
+}
+
+.card.has-shadow{
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.15);
+}
+
+.card.has-shadow h2{
+    font-size: 25px;
+    margin-bottom: 25px;
+}
+
+/*--------------------------------------------------
+  FORM
+--------------------------------------------------*/
+
+form.mktoForm{
+    width: 100% !important;
+}
+
+form.mktoForm label.mktoLabel{
+    width: 100% !important;
+    display: block;
+    font-size: 24px;
+    font-weight: 300;
+}
+
+form.mktoForm .mktoOffset{
+    height: 0 !important;
+}
+
+form.mktoForm input[type="text"],
+form.mktoForm input[type="email"],
+form.mktoForm input[type="tel"]{
+    width: 100% !important;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    display: block;
+    width: 100%;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+form.mktoForm div.mktoGutter{
+    height: 10px;
+}
+
+form.mktoForm form input::placeholder{
+    font-size: 24px;
+    font-weight: 300;
+}
+
+form.mktoForm span.mktoButtonWrap{
+    margin-left: 0 !important;
+}
+
+/*--------------------------------------------------
+  HERO IMAGE
+--------------------------------------------------*/
+
+.hero-image{
+    display: flex;
+    justify-content: center;
+}
+
+/*--------------------------------------------------
+  WHY ICON BLOCK
+--------------------------------------------------*/
+
+.text-block-center.why-us{
+    margin-bottom: 50px;
+}
+
+.why-icon-block{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+    margin-bottom: 100px;
+    padding: 0 30px;
+}
+
+.why-icon-block .icon-item{
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    grid-gap: 15px;
+}
+
+.why-icon-block .icon-item .text h3{
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+/*--------------------------------------------------
+  TEXT BLOCK CENTER
+--------------------------------------------------*/
+
+.text-block-center{
+    margin-bottom: 100px;
+}
+
+.text-block-center.clients{
+    margin-bottom: 50px;
+}
+
+.text-block-center > h2,
+.text-block-center > p{
+    width: 60%;
+    margin: 0 auto 20px;
+    text-align: center;
+}
+
+.text-block-center > h2{
+    margin-bottom: 30px;
+}
+
+/*--------------------------------------------------
+  CLIENT LOGOS
+--------------------------------------------------*/
+
+.logos-list{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    padding: 0 30px;
+    margin: 50px 0;
+}
+
+/*--------------------------------------------------
+  FOOTER
+--------------------------------------------------*/
+
+footer{
+    text-align: center;
+    background-image: linear-gradient(to right, #22caac, #06a791);
+    padding: 100px;
+}
+
+footer h2{
+    color: #fff;
+    font-size: 64px;
+    padding: 0 5%;
+}
+
+/*--------------------------------------------------
+  MEDIA QUERIES
+--------------------------------------------------*/
+
+@media(max-width: 1200px){
+
+    .container{
+        width: 100%;
+    }
+
+    .why h2,
+    .why p{
+        width: 90%;
+    }
+
+}
+
+@media(max-width: 1000px){
+    .why-icon-block{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media(max-width: 800px){
+
+    .products-services{
+        grid-template-columns: 1fr;
+    }
+
+    .products-services.single-row .icon-list > div{
+        grid-gap: 30px;
+        grid-template-columns: 1fr;
+    }
+
+    footer{
+        width: auto;
+        padding: 50px 30px;
+    }
+
+    .hero-image{
+        display: block;
+    }
+
+    .hero-image img{
+        width: 100%;
+    }
+
+    .hero-text h1,
+    .hero-slider h1{
+        font-size: 50px;
+        margin-top: 60px;
+        text-align: center;
+    }
+
+    footer h2{
+        font-size: 40px;
+        text-align: center;
+    }
+
+    .text-block-center > h2,
+    .text-block-center > p{
+        width: auto;
+        padding: 0 30px;
+    }
+
+    .hero-slider,
+    .hero-slider.ebook{
+        grid-template-columns: 1fr;
+        grid-gap: 0;
+        padding: 30px;
+        margin-bottom: 0;
+    }
+
+    .logos-list{
+        justify-items: center;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .single-row .card{
+        padding: 30px;
+        margin: 40px 30px 80px;
+    }
+
+}
+
+@media(max-width: 500px){
+
+    header{
+        grid-column-gap: 0;
+    }
+    .logos-list{
+        justify-items: center;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .why-icon-block{
+        grid-template-columns: 1fr;
+    }
+
+}
