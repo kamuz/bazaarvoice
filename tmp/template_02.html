@@ -2,14 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta class="mktoString" id="page-title" mktoName="Page Title" default="This is page title">
     <meta class="mktoString" id="contact-us-url" mktoName="Contact Us URL" default="#form-anchor">
     <meta class="mktoString" id="contact-us-text" mktoName="Contact Us Button Text" default="Contact Us">
+    <meta class="mktoString" id="lift-up-form" mktoName="Lift Up Form" default="-240px">
     <meta class="mktoString" id="footer-submit-url" mktoName="Footer Submit URL" default="#form-anchor">
     <meta class="mktoString" id="footer-submit-text" mktoName="Footer Button Text" default="Submit">
+    <meta class="mktoString" id="thank-you-text" mktoName="Thank you text">
+    <meta class="mktoString" id="thank-you-button-url" mktoName="Thank you button url">
+    <meta class="mktoBoolean" id="big-small-image" mktoName="Big or Small image for top section?" default="true" true_value="" false_value="second" false_value_name="Small" true_value_name="Big">
     <title>${page-title}</title>
     <link rel="stylesheet" href="http://resources.bazaarvoice.com/rs/848-PGD-174/images/landing-style.css">
     <link rel="stylesheet" href="http://resources.bazaarvoice.com/rs/848-PGD-174/images/form-style.css">
+    <style>
+    .products-services.form{
+        margin-top: ${lift-up-form};
+    }
+    .btn-green {
+        background: #00A690!important;
+        color:#ffffff;
+        border-radius: 23px;
+        display: inline-block;
+        color: #FFF !important;
+        text-align: center;
+        font-size: 14px!important;
+        text-decoration: none;
+        line-height: 1.4rem;
+        padding: 12px 40px !important;
+        cursor: pointer;
+        transition: all .2s ease-in;
+    }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -21,9 +45,43 @@
                 <a href="${contact-us-url}" class="btn main">${contact-us-text}</a>
             </div>
         </header>
-        <div class="hero-text mktoText" id="top-hero-text" mktoName="Top Hero Text">
-            <h1>Want to know more?</h1>
-            <p>Complete the form to request a call back and we will be in touch shortly</p>
+        <div class="hero-slider ${big-small-image}">
+            <div class="mktoText no-margin-smaller-size" id="hero-slider-text" mktoName="Hero Slider Text">
+                <h1>Case study headline</h1>
+                <p>Shoppers are at the heart of everything you do. They're at the heart of everything we do too.</p>
+            </div>
+            <div>
+                <img class="img-responsive mktoImg bottom-image" id="hero-slider-image" mktoName="Hero Slider Image">
+            </div>
+        </div>
+        <div class="products-services form">
+            <div class="icon-list margin-bottom ">
+                <div class="mktoText" id="text-left-form" mktoName="Text block on the left of the form">
+                    <h2>Increase intent to purchase by 186%</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos illum eaque unde, cum sint cupiditate hic delectus possimus, adipisci, magni enim culpa voluptatum pariatur vitae asperiores quo cumque nostrum, nam.</p>
+                    <p>Doloremque recusandae velit quidem officiis sint doloribus unde sequi explicabo odio, placeat ratione fugiat enim numquam praesentium! Soluta possimus, eius facere sequi libero? Nesciunt, ut? Unde labore reprehenderit fuga recusandae!</p>
+                    <p>Accusamus illo possimus iure suscipit quibusdam, obcaecati accusantium qui ipsa magni rem dignissimos molestias ab consequuntur nesciunt omnis, natus quidem, quam, doloribus aperiam. Adipisci eius quaerat quod incidunt est officia.</p>
+                </div>
+                <div><img class="mktoImg img-responsive" id="hero-image-3" mktoName="Hero Image #3"></div>
+            </div>
+            <div class="form-request margin-bottom" id="form-anchor">
+                <div class="card has-shadow">
+                    <div class="text mktoText" id="form-request-header-text" mktoName="Form Request Header Text">
+                        <h2>Request a call back now</h2>
+                    </div>
+                    <div class="mktoForm" id="form-request" mktoName="Form Request"></div>
+                    <div id="confirmform" style="display: none;"><h3 style="color: #00A690; font-size: 21px; font-weight: bold">Thank you</h3><p>${thank-you-text}</p>
+                        <div class="button">
+                            <a href="${thank-you-button-url}" class="btn-green">Download</a>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <div class="text-block-center clients mktoText" id="client-header" mktoName="Clients Block Header">
+            <h2>Not just the world's biggest network</h2>
+            <p>The world's best.</p>
+            <p>6,000+ clients and counting<</p>
         </div>
         <div class="logos-list">
             <div><img class="mktoImg" id="logo-1" mktoName="Client Logo #1"></div>
@@ -31,12 +89,6 @@
             <div><img class="mktoImg" id="logo-3" mktoName="Client Logo #3"></div>
             <div><img class="mktoImg" id="logo-4" mktoName="Client Logo #4"></div>
             <div><img class="mktoImg" id="logo-5" mktoName="Client Logo #5"></div>
-        </div>
-        <div class="form-request margin-bottom single-row" id="form-anchor">
-            <div class="card has-shadow">
-                <div class="text mktoText" id="form-request-header-text" mktoName="Form Request Header Text"><h2>Request a call back now</h2></div>
-                <div class="mktoForm" id="form-request" mktoName="Form Request"></div>
-            </div>
         </div>
         <div class="products-services single-row">
             <div class="icon-list margin-bottom">
@@ -114,17 +166,33 @@
             <div class="icon-item">
                 <div class="icon"><img class="mktoImg" id="why-icon-4" mktoName="Why Us Icon #4"></div>
                 <div class="text mktoText" id="why-icon-text-4" mktoName="Why Us Icon Text #4">
-                    <h3>Exceptional service &support</h3>
+                    <h3>Exceptional service &amp; support</h3>
                     <p>Industry leading customer satisfaction.</p>
                 </div>
             </div>
+        </div>
+        <div class="hero-image margin-bottom">
+            <div><img class="mktoImg" id="bottom-image" mktoName="Bottom Image"></div>
         </div>
     </div>
     <footer>
         <div class="mktoText" id="footer-text" mktoName="Footer Text"><h2>Find out more about our review management enterprise solutions</h2></div>
         <a href="${footer-submit-url}" class="btn main">${footer-submit-text}</a>
     </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="http://resources.bazaarvoice.com/rs/848-PGD-174/images/landing-script.js"></script>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="http://resources.bazaarvoice.com/rs/848-PGD-174/images/landing-script.js"></script>
+<script src="//app-aba.marketo.com/js/forms2/js/forms2.js"></script>
+<script>
+MktoForms2.whenReady(function (form){
+    //Add an onSuccess handler
+    form.onSuccess(function(values, followUpUrl){
+        //get the form's jQuery element and hide it
+        form.getFormElem().hide();
+        document.getElementById('confirmform').style.display = 'block';
+        //return false to prevent the submission handler from taking the lead to the follow up url.
+        return false;
+    });
+});
+</script>
 </html>
